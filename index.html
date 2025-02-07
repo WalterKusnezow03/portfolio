@@ -24,8 +24,23 @@
             width: 80%;
             max-width: 800px;
             border-radius: 10px;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .video iframe {
+            width: 400px;
+            height: 225px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        
+        
     </style>
 </head>
 <body>
@@ -37,6 +52,20 @@
         <p></p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         
+    </div>
+    
+    
+    
+    <h2>test</h2>
+    
+    <div class="container">
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="text">
+            <h2>Mein Video</h2>
+            <p>Hier ist ein YouTube-Video, das links neben diesem Text angezeigt wird. Die Anordnung erfolgt mit Flexbox, um es responsiv zu halten.</p>
+        </div>
     </div>
     
 
