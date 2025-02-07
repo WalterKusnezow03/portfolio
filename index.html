@@ -15,7 +15,7 @@
         h1,h2,h3 {
             color: #dfdfdf;
         }
-        p {
+        p, a{
             color: #dfdfdf;
             max-width: 600px;
             margin: 0 auto 20px;
@@ -81,24 +81,49 @@
             padding: 20px;
         }
 
+
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centers the items horizontally */
+            align-items: center;     /* Ensures items are vertically centered */
+            width: 100%;             /* Make sure navbar takes the full width of the screen */
+            gap: 10px;               /* Optional: Space between links */
+        }
+
+        a {
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #213245;
+            transition: opacity 0.5s ease;
+            opacity: 0.5;
+            display: block; /* Ensures the background expands to content */
+        }
+        a:hover{
+            opacity: 1.0;
+        }
+
+
+
+
     </style>
 </head>
 <body>
 
     <h1>Portfolio</h1>
     
-    <div class="container">
+    <div class="navbar">
         <div class="jump">
-            <p>bipedal locomotion</p>
+            <a href="#block1">Bipedal Locomotion</a>
         </div>
         <div class="jump">
-            <p>Pathfinding</p>
+            <a href="#block2">Pathfinding</a>
         </div>
     </div>
     
 
     <!-- SKELLETON -->
-    <div class="container">
+    <div class="container" id="block1">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
             <div id="overlay-1" class="overlay" onclick="playVideo(1)"></div>
@@ -126,7 +151,7 @@
 
 
     <!-- PATH FINDER -->
-    <div class="container">
+    <div class="container" id="block2">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
             <div id="overlay-2" class="overlay" onclick="playVideo(2)"></div>
