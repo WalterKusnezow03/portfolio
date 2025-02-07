@@ -64,8 +64,14 @@
             background-size: 100%;
             opacity: 1.0;
         }
+        #overlay-3{
+            background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
+            transition: background-size 1.0s ease, opacity 0.5s ease;;
+            background-size: 100%;
+            opacity: 1.0;
+        }
 
-        #overlay-1:hover, #overlay-2:hover{
+        #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
             background-size: 120%;
             opacity: 0.7;
         }
@@ -196,6 +202,29 @@
             </p>
         </div>
     </div>
+
+    <!-- TERRAIN -->
+     <div class="container", id="block4">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-3" class="overlay" onclick="playVideo(3)"></div>
+
+            <!-- YouTube Video
+            <iframe id="video2" src="https://www.youtube.com/embed/Vx3eUHKYpVY?si=Df2ehlMSKx3MKJBP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             -->
+        </div>
+
+        <div class="text">
+            <h3>Terrain generation: Bezier splines</h3>
+            <p>
+                Terrain generation using connected Bezier splines,
+                video showcase is in production
+            </p>
+        </div>
+
+     </div>
+
+
 
     <div>
     <h3>Experience</h3>
