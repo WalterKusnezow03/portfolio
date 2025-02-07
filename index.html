@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Video-Seite</title>
+    <title>Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,54 +20,110 @@
             max-width: 600px;
             margin: 0 auto 20px;
         }
-        iframe {
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
+
+        .header {
+            text-align: center;
         }
-        
+
         .container {
             display: flex;
             align-items: center;
             max-width: 900px;
             margin: 20px auto;
+            padding: 40px;
             text-align: left;
+            gap: 20px;
         }
-        .video iframe {
+
+        .video-wrapper {
+            position: relative;
             width: 400px;
             height: 225px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-size 1.0s ease; /* Übergang für background-size */
+            background-size: 100%; /* Startbild mit voller Größe */ /* Standardbild wird auf 'cover' gesetzt */
+        }
+
+        .overlay:hover {
+            background-size: 120%; /* Beim Hover auf 120% vergrößern */
+            opacity: 0.7;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .text {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
     </style>
 </head>
 <body>
 
     <h1>Portfolio</h1>
     
-    <div>
-        <h2>Bipedal locomotion</h2>
-        <p></p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        
+    <div class="container">
+        <div class="jump">
+            <p>bipedal locomotion</p>
+        </div>
+        <div class="jump">
+            <p>Pathfinding</p>
+        </div>
     </div>
     
-    
-    
-    <h2>test</h2>
     
     <div class="container">
-        <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div class="overlay" onclick="playVideo()"></div>
+
+            <!-- YouTube Video -->
+            <iframe id="video" 
+                src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
         </div>
+
         <div class="text">
-            <h2>Mein Video</h2>
-            <p>Hier ist ein YouTube-Video, das links neben diesem Text angezeigt wird. Die Anordnung erfolgt mit Flexbox, um es responsiv zu halten.</p>
+            <h3>Bipedal locomotion: humanoid skeletal model</h3>
+            <p>
+                I am working with Unreal Engine on the 
+                generalization of my motion pattern generator
+                towards controlled walking, running, 
+                and interaction with the terrain.
+            </p>
         </div>
     </div>
-    
+
+    <script>
+        function playVideo() {
+            // Overlay ausblenden
+            document.querySelector('.overlay').style.display = 'none';
+            
+            // Autoplay aktivieren
+            const video = document.getElementById('video');
+            video.src += "&autoplay=1";
+        }
+    </script>
 
 </body>
 </html>
