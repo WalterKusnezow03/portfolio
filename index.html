@@ -50,12 +50,12 @@
             background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
             cursor: pointer;
             border-radius: 10px;
-            transition: background-size 1.0s ease; /* Übergang für background-size */
-            background-size: 100%; /* Startbild mit voller Größe */ /* Standardbild wird auf 'cover' gesetzt */
+            transition: background-size 1.0s ease;
+            background-size: 100%;
         }
 
         .overlay:hover {
-            background-size: 120%; /* Beim Hover auf 120% vergrößern */
+            background-size: 120%;
             opacity: 0.7;
         }
 
@@ -87,7 +87,6 @@
         </div>
     </div>
     
-    
     <div class="container">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
@@ -95,7 +94,7 @@
 
             <!-- YouTube Video -->
             <iframe id="video" 
-                src="https://www.youtube.com/embed/aTw4VbIOjms?si=5qim-W3AfqmKReWE" 
+                src="https://www.youtube.com/embed/aTw4VbIOjms?enablejsapi=1" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" 
@@ -114,15 +113,58 @@
         </div>
     </div>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <script>
+        let player;
+
+        // Wird aufgerufen, wenn die YouTube API vollständig geladen ist
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+            player.mute();
+        }
+
+        // Funktion zum Überwachen des Video-Zustands
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                console.log('Das Video wird abgespielt!');
+            }
+        }
+
+        // Funktion zur Berechnung und Anzeige der verbleibenden Zeit
+        function displayRemainingTime() {
+            if (player) {
+                const currentTime = player.getCurrentTime(); // Aktuelle Zeit in Sekunden
+                const duration = player.getDuration(); // Gesamtdauer des Videos in Sekunden
+                const remainingTime = duration - currentTime; // Verbleibende Zeit
+
+                if(remainingTime < 1){
+                    // Video zum Anfang zurücksetzen und neu starten
+                    player.seekTo(0, true);  // Setzt das Video auf den Beginn
+                    player.playVideo();      // Startet das Video neu
+                    document.querySelector('.overlay').style.display = 'block'; // Zeige das Overlay wieder an
+                }
+            }
+        }
+
+        // Funktion zum Starten des Videos
         function playVideo() {
             // Overlay ausblenden
             document.querySelector('.overlay').style.display = 'none';
-            
-            // Autoplay aktivieren
-            const video = document.getElementById('video');
-            video.src += "&autoplay=1";
+
+            // Video abspielen
+            if (player) {
+                player.playVideo();
+                console.log('Das Video wird abgespielt.');
+            }
         }
+
+        // Wiederhole das Abrufen der verbleibenden Zeit alle 1 Sekunde
+        setInterval(displayRemainingTime, 100);
     </script>
 
 </body>
