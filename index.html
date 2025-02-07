@@ -88,10 +88,12 @@
         </div>
     </div>
     
+
+    <!-- SKELLETON -->
     <div class="container">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
-            <div class="overlay" onclick="playVideo()"></div>
+            <div id="overlay-1" class="overlay" onclick="playVideo(1)"></div>
 
             <!-- YouTube Video -->
             <iframe id="video" 
@@ -114,10 +116,32 @@
         </div>
     </div>
 
+
+    <!-- PATH FINDER -->
+    <div class="container">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-2" class="overlay" onclick="playVideo(2)"></div>
+
+            <!-- YouTube Video -->
+            <iframe id="video2" src="https://www.youtube.com/embed/3KGMOkUSHdU?si=0Jo7Uc2A_xSGk9bT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </iframe>
+        </div>
+
+        <div class="text">
+            <h3>Pathfinding: A* Algorythm</h3>
+            <p>
+                Custom A* Pathfinding applied for an 3D enviroment in the Unreal Engine
+            </p>
+        </div>
+    </div>
+
     <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
         let player;
+        let players= [];
+        let id = 0;
 
         // Wird aufgerufen, wenn die YouTube API vollständig geladen ist
         function onYouTubeIframeAPIReady() {
@@ -126,7 +150,17 @@
                     'onStateChange': onPlayerStateChange
                 }
             });
-            player.mute();
+            players[1] = player;
+            
+            player = new YT.Player('video2', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+            players[2] = player;
+            
+            player = null;
+
         }
 
         // Funktion zum Überwachen des Video-Zustands
@@ -138,34 +172,40 @@
 
         // Funktion zur Berechnung und Anzeige der verbleibenden Zeit
         function displayRemainingTime() {
-            if (player) {
-                const currentTime = player.getCurrentTime(); // Aktuelle Zeit in Sekunden
-                const duration = player.getDuration(); // Gesamtdauer des Videos in Sekunden
-                const remainingTime = duration - currentTime; // Verbleibende Zeit
+            for(let i = 1; i < players.length; i++){
+                if (players[i] != null) {
+                    const currentTime = players[i].getCurrentTime(); // Aktuelle Zeit in Sekunden
+                    const duration = players[i].getDuration(); // Gesamtdauer des Videos in Sekunden
+                    const remainingTime = duration - currentTime; // Verbleibende Zeit
 
-                if(remainingTime < 1){
-                    // Video zum Anfang zurücksetzen und neu starten
-                    player.seekTo(0, true);  // Setzt das Video auf den Beginn
-                    player.playVideo();      // Startet das Video neu
-                    document.querySelector('.overlay').style.display = 'block'; // Zeige das Overlay wieder an
+                    if(remainingTime < 1.0){
+                        // Video zum Anfang zurücksetzen und neu starten
+                        players[i].seekTo(0, true);  // Setzt das Video auf den Beginn
+                        players[i].playVideo();      // Startet das Video neu
+                        document.getElementById('overlay-' + i).style.display = 'block'; // Zeige das Overlay wieder an
+
+                    }
                 }
             }
+            
         }
 
         // Funktion zum Starten des Videos
-        function playVideo() {
+        function playVideo(num) {
             // Overlay ausblenden
-            document.querySelector('.overlay').style.display = 'none';
-
+            document.getElementById('overlay-' + num).style.display = 'none';
+            
             // Video abspielen
+            player = players[num];
             if (player) {
                 player.playVideo();
                 console.log('Das Video wird abgespielt.');
+                id = num;
             }
         }
 
         // Wiederhole das Abrufen der verbleibenden Zeit alle 1 Sekunde
-        setInterval(displayRemainingTime, 100);
+        setInterval(displayRemainingTime, 10);
     </script>
 
 </body>
