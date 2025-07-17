@@ -52,6 +52,13 @@
             height: 225px;
         }
 
+        #overlay-bmw{
+            background: url('thumbnails/sim.jpg')center/cover no-repeat;
+            transition: background-size 1.0s ease, opacity 0.5s ease;;
+            background-size: 100%;
+            opacity: 1.0;
+        }
+
         #overlay-1{
             background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
             transition: background-size 1.0s ease, opacity 0.5s ease;;
@@ -71,7 +78,7 @@
             opacity: 1.0;
         }
 
-        #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
+        #overlay-bmw:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
             background-size: 120%;
             opacity: 0.7;
         }
@@ -149,6 +156,9 @@
     
     <div class="navbar">
         <div class="jump">
+            <a href="#block0">BMW</a>
+        </div>
+        <div class="jump">
             <a href="#block1">Bipedal Locomotion</a>
         </div>
         <div class="jump">
@@ -174,7 +184,36 @@
             <a href="#block3">Contact</a>
         </div>
     </div>
-    
+
+
+    <!-- BMW INTERNSHIP -->
+    <div class="container" id="block0">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-bmw" class="overlay"></div>
+        </div>
+
+        <div class="text">
+            <h3>BMW Internship: EINK</h3>
+            <p>
+                I had a 20 Week Internship at BMW in the Driving Simulation Center in Munich, 
+                working on a daily basis with the Unreal Engine, 
+                C++ on a complex project in a Computergraphics Topic, in regards to the EINK Topic. 
+                I gained more Experience with working with MeshData, Matrix Calculations / 
+                Projection on Uneven Surfaces, Texturing and 
+                developing a custom GUI Framework from ground up.
+            </p>
+            <p>
+                Working on this Agile Project, 
+                as the Only Software Engineer and Programmer, 
+                was challenging but  a really great Experience!
+
+            </p>
+        </div>
+    </div>
+
+
+
 
     <!-- SKELLETON -->
     <div class="container" id="block1">
