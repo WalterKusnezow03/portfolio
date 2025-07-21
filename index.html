@@ -51,6 +51,56 @@
             width: 400px;
             height: 225px;
         }
+        /** IMAGE WRAPPER */
+
+        .image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 225px;
+            transition: transform 0.5s ease-in-out;
+            transform-origin: center center; /* scale from center */
+            z-index: 1; /* so it appears above other elements */        
+        }
+
+        /* Hover-Effekt: zentriert und vergrößert */
+        /* Hover: vergrößern und verschieben 
+        @media (min-width: 768px) {
+            .image-wrapper:hover {
+                transform: scale(2) translate(0, 0); 
+                z-index: 10;
+            }
+        }*/
+
+        
+        
+        .buttonStyle {
+            user-select: none; /*no marker text!*/
+
+            position: absolute;       /* Jetzt über dem Bild positioniert */
+            top: 97px;                 /* Vertikal zentriert */
+            
+            z-index: 10;
+            
+            width: 30px;              /* Button-Größe */
+            height: 30px;
+            border-radius: 50%;       /* macht den Button rund */
+            background-color: #181e224e;/* Hintergrundfarbe */
+            color: white;             /* Pfeilfarbe */
+            border: none;
+            cursor: pointer;
+            font-size: 20px;          /* Pfeilgröße */
+            display: flex;
+            justify-content: center;  /* Pfeil zentrieren */
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .buttonStyle.left {
+            left: 5px; /* Oder ein anderer Abstand vom linken Rand */
+        }
+
+        .buttonStyle.right {
+            right: 5px; /* Abstand vom rechten Rand */
+        }
 
         #overlay-bmw{
             background: url('thumbnails/sim.jpg')center/cover no-repeat;
@@ -78,6 +128,15 @@
             opacity: 1.0;
         }
 
+        #overlay-adobeillustrator{
+            background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
+            transition: background-size 1.0s ease;
+            background-size: 100%;
+            /*opacity: 1.0;*/
+            opacity: 1.0;
+        }
+
+
         #overlay-bmw:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
             background-size: 120%;
             opacity: 0.7;
@@ -100,6 +159,14 @@
         .overlay:hover {
             background-size: 120%;
             opacity: 0.7;
+        }
+
+        .image-fill {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Bild füllt Container */
+            border-radius: 10px;
+            display: block;
         }
 
         iframe {
@@ -269,7 +336,7 @@
     </div>
 
     <!-- TERRAIN -->
-     <div class="container", id="block4">
+    <div class="container", id="block4">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
             <div id="overlay-3" class="overlay" onclick="playVideo(3)"></div>
@@ -289,29 +356,50 @@
             </p>
         </div>
 
-     </div>
+    </div>
+
+    <!-- Adobe illustrator -->
+    <h3>Creative Skills</h3>
+    <div class="container", id="AI-block">
+        <div class="image-wrapper">
+            <!-- Overlay für bilder -->
+            <div id="overlay-adobeillustrator" class="overlay"></div>
+            <div class="buttonStyle left" onclick="showImage('-')">&lt;</div>
+            <div class="buttonStyle right" onclick="showImage('+')">&gt;</div>
+        </div>
+
+        <div class="text">
+            <h3>Adobe Illustrator: Graphics Design</h3>
+            <p>
+                I have over 2 Years of experience with Flat designs in Adobe Illustrator.
+            </p>
+        </div>
+
+    </div>
 
 
 
+
+
+    <!--Experience section-->
     <div>
+        <h3>Very Good Experience</h3>
+        <div class="navbar" id="block4">
+            <div class="button">C++</div>
+            <div class="button">Unreal Engine</div>
+        </div>
 
-    <h3>Very Good Experience</h3>
-    <div class="navbar" id="block4">
-        <div class="button">C++</div>
-        <div class="button">Unreal Engine</div>
-    </div>
-
-    <h3>All Experience</h3>
-    <div class="navbar" id="block5">
-        <div class="button">C++</div>
-        <div class="button">Unreal Engine</div>
-        <div class="button">C#</div>
-        <div class="button">Java</div>
-        <div class="button">Godot Engine</div>
-        <div class="button">Unity Engine</div>
-        <div class="button">Android Studio</div>
-        <div class="button">Swift IOS Development</div>
-    </div>
+        <h3>All Experience</h3>
+        <div class="navbar" id="block5">
+            <div class="button">C++</div>
+            <div class="button">Unreal Engine</div>
+            <div class="button">C#</div>
+            <div class="button">Java</div>
+            <div class="button">Godot Engine</div>
+            <div class="button">Unity Engine</div>
+            <div class="button">Android Studio</div>
+            <div class="button">Swift IOS Development</div>
+        </div>
     </div>
 
     <div class="container" id="block3">
@@ -328,6 +416,12 @@
     <script src="https://www.youtube.com/iframe_api"></script>
 
     <script>
+
+
+
+
+
+        // -- video playing --
         let player;
         let players= [];
         let id = 0;
@@ -395,6 +489,36 @@
 
         // Wiederhole das Abrufen der verbleibenden Zeit alle 1 Sekunde
         setInterval(displayRemainingTime, 10);
+        // -- video player end --
+
+        // -- adobe illustrator click through --
+        let imageIndex = 0;
+        let images = [
+            'thumbnails/aiplanet1.jpeg',
+            'thumbnails/aiplanet2.jpeg'
+        ];
+        function showImage(direction){
+            if(direction == '+'){
+                imageIndex++;
+            }else{
+                imageIndex--;
+            }
+            if(imageIndex < 0){
+                imageIndex = images.length - 1;
+            }
+            if(imageIndex >= images.length){
+                imageIndex = 0;
+            }
+
+            const overlay = document.getElementById("overlay-adobeillustrator");
+            overlay.style.backgroundImage = `url('${images[imageIndex]}')`;
+        }
+        //load image on start
+        showImage('-');
+        showImage('+');
+
+
+
     </script>
 
 </body>
