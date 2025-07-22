@@ -102,7 +102,7 @@
             right: 5px; /* Abstand vom rechten Rand */
         }
 
-        #overlay-bmw{
+        #overlay-0{
             background: url('thumbnails/sim.jpg')center/cover no-repeat;
             transition: background-size 1.0s ease, opacity 0.5s ease;;
             background-size: 100%;
@@ -137,7 +137,7 @@
         }
 
 
-        #overlay-bmw:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
+        #overlay-0:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
             background-size: 120%;
             opacity: 0.7;
         }
@@ -257,7 +257,16 @@
     <div class="container" id="block0">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
-            <div id="overlay-bmw" class="overlay"></div>
+            <div id="overlay-0" class="overlay" onclick="playVideo(0)"></div>
+
+            <iframe id="video"
+             src="https://www.youtube.com/embed/L2EdO0enGvI?si=_gWzSWPeXCcBiBuW" 
+             title="YouTube video player" 
+             frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            
         </div>
 
         <div class="text">
