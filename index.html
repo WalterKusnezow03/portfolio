@@ -1,237 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/imageOverlays.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/itembar.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px;
-            background-color: #1E1A1D;
-            text-align: center;
-        }
-        h1,h2,h3 {
-            color: #dfdfdf;
-        }
-        h1{
-            padding: 60px;
-        }
-        p, a{
-            color: #dfdfdf;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-
-        .header {
-            text-align: center;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            align-content: top;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 40px;
-            text-align: left;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stacks the items vertically */
-                gap: 10px; /* Adjust the space between items if needed */
-            }
-        }
-
-        .video-wrapper {
-            position: relative;
-            width: 400px;
-            height: 225px;
-        }
-        /** IMAGE WRAPPER */
-
-        .image-wrapper {
-            position: relative;
-            width: 400px;
-            height: 225px;
-            transition: transform 0.5s ease-in-out;
-            transform-origin: center center; /* scale from center */
-            z-index: 1; /* so it appears above other elements */        
-        }
-
-        /* Hover-Effekt: zentriert und vergrößert */
-        /* Hover: vergrößern und verschieben 
-        @media (min-width: 768px) {
-            .image-wrapper:hover {
-                transform: scale(2) translate(0, 0); 
-                z-index: 10;
-            }
-        }*/
-
-        
-        
-        .buttonStyle {
-            user-select: none; /*no marker text!*/
-
-            position: absolute;       /* Jetzt über dem Bild positioniert */
-            top: 97px;                 /* Vertikal zentriert */
-            
-            z-index: 10;
-            
-            width: 30px;              /* Button-Größe */
-            height: 30px;
-            border-radius: 50%;       /* macht den Button rund */
-            background-color: #181e224e;/* Hintergrundfarbe */
-            color: white;             /* Pfeilfarbe */
-            border: none;
-            cursor: pointer;
-            font-size: 20px;          /* Pfeilgröße */
-            display: flex;
-            justify-content: center;  /* Pfeil zentrieren */
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-        .buttonStyle.left {
-            left: 5px; /* Oder ein anderer Abstand vom linken Rand */
-        }
-
-        .buttonStyle.right {
-            right: 5px; /* Abstand vom rechten Rand */
-        }
-
-        #overlay-0{
-            background: url('thumbnails/sim.jpg')center/cover no-repeat;
-            transition: background-size 1.0s ease, opacity 0.5s ease;;
-            background-size: 100%;
-            opacity: 1.0;
-        }
-
-        #overlay-1{
-            background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
-            transition: background-size 1.0s ease, opacity 0.5s ease;;
-            background-size: 100%;
-            opacity: 1.0;
-        }
-        #overlay-2{
-            background: url('thumbnails/pathfinderThumbnail.jpeg') center/cover no-repeat;
-            transition: background-size 1.0s ease, opacity 0.5s ease;;
-            background-size: 100%;
-            opacity: 1.0;
-        }
-        #overlay-3{
-            background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
-            transition: background-size 1.0s ease, opacity 0.5s ease;;
-            background-size: 100%;
-            opacity: 1.0;
-        }
-
-        #overlay-adobeillustrator{
-            background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
-            transition: background-size 1.0s ease;
-            background-size: 100%;
-            /*opacity: 1.0;*/
-            opacity: 1.0;
-        }
-
-
-        #overlay-0:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
-            background-size: 120%;
-            opacity: 0.7;
-        }
-
-        .overlay{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: background-size 1.0s ease, opacity 0.5s ease;;
-            background-size: 100%;
-            opacity: 1.0;
-        }
-
-        .overlay:hover {
-            background-size: 120%;
-            opacity: 0.7;
-        }
-
-        .image-fill {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;  /* Bild füllt Container */
-            border-radius: 10px;
-            display: block;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            display: block;
-        }
-
-        .text {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-
-        .navbar {
-            display: flex;
-            justify-content: center; /* Centers the items horizontally */
-            align-items: center;     /* Ensures items are vertically centered */
-            width: 100%;             /* Make sure navbar takes the full width of the screen */
-            gap: 10px;               /* Optional: Space between links */
-            flex-wrap: wrap;
-        }
-
-        a, .button {
-            text-decoration: none;
-            color: #dfdfdf;
-            border-radius: 10px;
-            padding: 10px;
-            background-color: #213245;
-            transition: opacity 0.5s ease;
-            opacity: 0.5;
-            display: block; /* Ensures the background expands to content */
-        }
-        a:hover{
-            opacity: 1.0;
-        }
-        
-        .seperator{
-            opacity: 0.5;
-            display: block;
-            border-radius: 10px;
-            background-color: #dfdfdf;
-        }
-
-
-
-    </style>
+    
 </head>
 <body>
 
     <h1>Walter Kusnezow: Portfolio</h1>
     
     <div class="navbar">
-        <div class="jump">
+        <div>
             <a href="#block0">BMW</a>
         </div>
-        <div class="jump">
+        <div>
             <a href="#block1">Bipedal Locomotion</a>
         </div>
-        <div class="jump">
+        <div>
             <a href="#block2">Pathfinding</a>
         </div>
-        <div class="jump">
+        <div>
             <a href="#block4">Terrain generation</a>
         </div>
         
@@ -266,8 +62,6 @@
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
             </iframe>
-
-            
         </div>
 
         <div class="text">
@@ -283,13 +77,22 @@
                 custom Projection on Uneven Surfaces, and designing a Complex Software Architecture.
             </p>
             <p>
-                Working on this agile project, 
+                Working on this agile research / Exploration project, 
                 as the only Software Engineer, Programmer and Designer 
                 at the same time, 
                 was challenging but a really great opportunity to gain more Experience!
 
             </p>
+
         </div>
+
+        <!--
+        <div class="barVertical">
+            <div class="skillbutton">C++</div>
+            <div class="skillbutton">Unreal Engine</div>
+            <div class="skillbutton">Adobe Illustrator</div>
+        </div>
+        -->
     </div>
 
 
@@ -390,6 +193,9 @@
             <p>
                 I have experience in creating flat designs in Adobe Illustrator.
             </p>
+        </div>
+        <div>
+            <a href="adobeIllustrator.html">More &gt</a>
         </div>
 
     </div>
@@ -511,8 +317,8 @@
         // -- adobe illustrator click through --
         let imageIndex = 0;
         let images = [
-            'thumbnails/aiplanet1.jpeg',
-            'thumbnails/aiplanet2.jpeg'
+            '/illustrations/aiplanet1.jpeg',
+            '/illustrations/aiplanet2.jpeg'
         ];
         function showImage(direction){
             if(direction == '+'){

@@ -1,0 +1,73 @@
+
+/*BLUE BUTTONS*/
+a, .button {
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #213245;
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+    display: block; /* Ensures the background expands to content */
+    white-space: nowrap;   /* Kein Zeilenumbruch */
+}
+a:hover{
+    opacity: 1.0;
+}
+
+/*Fake button*/
+.skillbutton{
+    text-decoration: none;
+    color: #161616;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #a0c6ff;
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+    display: block; /* Ensures the background expands to content */
+}
+
+
+
+
+
+.goback{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 10;
+}
+
+
+
+
+
+/*INTERACT BUTTONS LEFT RIGHT*/
+.buttonStyle {
+    user-select: none; /*no marker text!*/
+
+    position: absolute;       /* Jetzt über dem Bild positioniert */
+    top: 97px;                 /* Vertikal zentriert */
+    
+    z-index: 10;
+    
+    width: 30px;              /* Button-Größe */
+    height: 30px;
+    border-radius: 50%;       /* macht den Button rund */
+    background-color: #181e224e;/* Hintergrundfarbe */
+    color: white;             /* Pfeilfarbe */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;          /* Pfeilgröße */
+    display: flex;
+    justify-content: center;  /* Pfeil zentrieren */
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.buttonStyle.left {
+    left: 5px; /* Oder ein anderer Abstand vom linken Rand */
+}
+
+.buttonStyle.right {
+    right: 5px; /* Abstand vom rechten Rand */
+}
