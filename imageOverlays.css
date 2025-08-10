@@ -6,8 +6,16 @@
     opacity: 1.0;
 }
 
-/*Bipedal Locomotion Overlay*/
+/*Bipedal Locomotion 2.0 Overlay*/
 #overlay-1{
+    background: url('thumbnails/SlipThumbnail.jpg') center/cover no-repeat;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 100%;
+    opacity: 1.0;
+}
+
+/*Bipedal Locomotion 1.0 Overlay*/
+#overlay-2{
     background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
     transition: background-size 1.0s ease, opacity 0.5s ease;;
     background-size: 100%;
@@ -15,7 +23,7 @@
 }
 
 /*Pathfinder Overlay*/
-#overlay-2{
+#overlay-3{
     background: url('thumbnails/pathfinderThumbnail.jpeg') center/cover no-repeat;
     transition: background-size 1.0s ease, opacity 0.5s ease;;
     background-size: 100%;
@@ -23,7 +31,7 @@
 }
 
 /*Terrain Overlay*/
-#overlay-3{
+#overlay-4{
     background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
     transition: background-size 1.0s ease, opacity 0.5s ease;;
     background-size: 100%;
@@ -40,7 +48,12 @@
 }
 
 
-#overlay-0:hover, #overlay-1:hover, #overlay-2:hover, #overlay-3:hover{
+#overlay-0:hover, 
+#overlay-1:hover, 
+#overlay-2:hover, 
+#overlay-3:hover,
+#overlay-4:hover
+{
     background-size: 120%;
     opacity: 0.7;
 }
