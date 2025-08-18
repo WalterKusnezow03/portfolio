@@ -1,6 +1,6 @@
 /*BMW OVERLAY*/
 #overlay-0{
-    background: url('thumbnails/sim.jpg')center/cover no-repeat;
+    background: url('thumbnails/bmw.jpeg')center/cover no-repeat;
     transition: background-size 1.0s ease, opacity 0.5s ease;;
     background-size: 100%;
     opacity: 1.0;
