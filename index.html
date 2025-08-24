@@ -321,80 +321,19 @@
     <!-- WEBSITE SPECIFIC-->
     <script>
 
-
-
-
-
-        // -- video playing --
-        let player;
-        let players= [];
-        let id = 0;
-
-        // Wird aufgerufen, wenn die YouTube API vollständig geladen ist
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('video', {
-                events: {
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-            players[1] = player;
-            
-            player = new YT.Player('video2', {
-                events: {
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-            players[2] = player;
-            
-            player = null;
-
-        }
-
-        // Funktion zum Überwachen des Video-Zustands
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-                console.log('Das Video wird abgespielt!');
-            }
-        }
-
-        // Funktion zur Berechnung und Anzeige der verbleibenden Zeit
-        function displayRemainingTime() {
-            for(let i = 1; i < players.length; i++){
-                if (players[i] != null) {
-                    const currentTime = players[i].getCurrentTime(); // Aktuelle Zeit in Sekunden
-                    const duration = players[i].getDuration(); // Gesamtdauer des Videos in Sekunden
-                    const remainingTime = duration - currentTime; // Verbleibende Zeit
-
-                    if(remainingTime < 1.0){
-                        // Video zum Anfang zurücksetzen und neu starten
-                        players[i].seekTo(0, true);  // Setzt das Video auf den Beginn
-                        players[i].playVideo();      // Startet das Video neu
-                        document.getElementById('overlay-' + i).style.display = 'block'; // Zeige das Overlay wieder an
-
-                    }
-                }
-            }
-            
-        }
-
-        // Funktion zum Starten des Videos
         function playVideo(num) {
             // Overlay ausblenden
             document.getElementById('overlay-' + num).style.display = 'none';
-            
-            /*
-            // Video abspielen
-            player = players[num];
-            if (player) {
-                player.playVideo();
-                console.log('Das Video wird abgespielt.');
-                id = num;
-            }*/
         }
 
-        // Wiederhole das Abrufen der verbleibenden Zeit alle 1 Sekunde
-        setInterval(displayRemainingTime, 15);
-        // -- video player end --
+        function stopVideo(num){
+            // Overlay enblenden
+            document.getElementById('overlay-' + num).style.display = ''; //reset
+        }
+
+
+
+
 
         // -- adobe illustrator click through --
         let imageIndex = 0;
