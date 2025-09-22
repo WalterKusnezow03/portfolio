@@ -37,6 +37,13 @@
     background-size: 100%;
     opacity: 1.0;
 }
+/*UMaterial Overlay*/
+#overlay-5{
+    background: url('thumbnails/waterGif.gif') center/cover no-repeat;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 110%;
+    opacity: 1.0;
+}
 
 /*Adobe illustrator Overlay*/
 #overlay-adobeillustrator{
