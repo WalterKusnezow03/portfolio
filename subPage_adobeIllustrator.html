@@ -50,7 +50,22 @@
 
     <!-- CREATE NAV BAR AND NAME-->
     <script src="JSHelper/main/TopGenerate.js"></script>
+    <script src="JSHelper/main/ImagesGenerate.js"></script>
 
+    <script>
+        let dataIn= [
+            ["Planet Blue", 'illustrations/aiplanet1.jpeg'], // Name of item, Link
+            ["Planet Red", 'illustrations/aiplanet2.jpeg'],
+            ["Tropical Beach", 'illustrations/aibeach.png']
+        ];
+        let elementIdForImages = "ImageHolder";
+
+        //put tuples with: [title, imagePath]
+        ImagesGenerate.GenerateImagesWithTitle(dataIn, elementIdForImages);
+
+    </script>
+
+    <!--
     <script>
 
         let images = [
@@ -75,9 +90,9 @@
                 document.getElementById("ImageHolder").innerHTML += `
                     
                     <div>
-                        <!-- title -->
+                        <!- - title - ->
                         <p class="title">${titles[i]}</p>
-                        <!-- Overlay für bilder -->
+                        <!- - Overlay für bilder - ->
                         <div class="overlayImage" id="${overlayId}"></div>
                     </div>
                    
@@ -93,7 +108,7 @@
 
 
     </script>
-    
+    -->
 
 
 

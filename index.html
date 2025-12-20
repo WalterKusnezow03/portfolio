@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="imageOverlays.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/itembar.css">
+    <link rel="stylesheet" href="css/scrollboxstyle.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     
 </head>
-<body>
+<body id="bodyId">
+
+    
 
     <h1 id="Naming">Walter Kusnezow: Portfolio</h1>
 
@@ -271,31 +274,55 @@
 
 
 
-    <!-- Adobe illustrator -->
+    <!-- Adobe illustrator and 3D modelling-->
     <h3>Creative Skills</h3>
-    <div class="container", id="AI-block">
-        <div class="image-wrapper">
-            <!-- Overlay für bilder -->
-            <div id="overlay-adobeillustrator" class="overlay"></div>
-            <div class="buttonStyle left" onclick="showImage('-')">&lt;</div>
-            <div class="buttonStyle right" onclick="showImage('+')">&gt;</div>
-        </div>
+    <script src="JSHelper/main/ImageStackGenerate.js"></script>
+    <script src="JSHelper/main/SkillbarGenerate.js"></script>
+    <script>
 
-        <div class="text">
-            <h3>Adobe Illustrator: Graphics Design</h3>
-            <p>
-                I have experience in creating flat designs in Adobe Illustrator.
-            </p>
+        //-- Adobe illustrator --
+        let imagePaths = [
+            'illustrations/aiplanet1.jpeg',
+            'illustrations/aiplanet2.jpeg'
+        ];
+        let stackId = 1;
+        let morePage = "subPage_adobeIllustrator.html";
+        let skills = ["Adobe Illustrator"];
 
-            <div class="barHorizontal">
-                <div class="skillbutton">Adobe Illustrator</div>
-            </div>
-        </div>
-        <div>
-            <a href="subPage_adobeIllustrator.html">More &gt</a>
-        </div>
+        ImageStackGenerate.GenerateImageStackWithTitleAndSkills
+        (
+            "Adobe Illustrator: Graphics Design",
+            "I have experience in creating flat designs in Adobe Illustrator.",
+            imagePaths,
+            "bodyId",
+            stackId,
+            morePage,
+            skills
+        );
 
-    </div>
+        //-- 3D modelling --
+        let imagePaths2 = [
+            ' modellingImages/clockFront.png',
+            ' modellingImages/clockBack.png'
+        ];
+        let stackId2 = 2;
+        let morePage2 = "subPage_3dModelling.html";
+        let skills2 = ["3D Modelling"];
+
+        ImageStackGenerate.GenerateImageStackWithTitleAndSkills
+        (
+            "3D Modelling",
+            "I have experience in creating 3D Modells in Blender.",
+            imagePaths2,
+            "bodyId",
+            stackId2,
+            morePage2,
+            skills2
+        );
+    </script>
+
+
+
 
 
     
@@ -337,25 +364,41 @@
     <!--Experience section-->
     <div>
         <h3>Very Good Experience</h3>
-        <div class="navbar" id="block4">
-            <div class="button">C++</div>
-            <div class="button">Unreal Engine</div>
-            <div class="button">Object oriented programming with C++</div>
-            <div class="button">MeshData Algorithms / custom solutions</div>
+        <div id="skillVeryGood"></div>
         </div>
 
         <h3>All Experience</h3>
-        <div class="navbar" id="block5">
-            <div class="button">C++</div>
-            <div class="button">Unreal Engine</div>
-            <div class="button">C#</div>
-            <div class="button">Java</div>
-            <div class="button">Unity Engine</div>
-            <div class="button">Godot Engine</div>
-            <div class="button">Android Studio</div>
-            <div class="button">Swift IOS Development</div>
+        <div id="skillAll"></div>
         </div>
+        
+       
+
     </div>
+
+    <script>
+        let idToAddToA = "skillVeryGood";
+        let skillsA = 
+        ["C++", "Unreal Engine", "Object oriented programming with C++", "MeshData Algorithms / custom solutions"];
+        let skillBarId = "skillA";
+
+        SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);
+
+
+        idToAddToA = "skillAll";
+        skillsA = 
+        [
+        "C++", 
+        "Unreal Engine", 
+        "C#",
+        "Java",
+        "Godot Engine",
+        "Android Studio",
+        "Swift IOS Development"
+        ];
+        skillBarId = "skillB";
+        SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);
+        
+    </script>
 
     
 
@@ -372,6 +415,7 @@
     <!-- CREATE NAV BAR AND NAME-->
     <script src="JSHelper/main/TopGenerate.js"></script>
 
+
     <!-- WEBSITE SPECIFIC-->
     <script>
 
@@ -384,40 +428,8 @@
             // Overlay enblenden
             document.getElementById('overlay-' + num).style.display = ''; //reset
         }
-
-
-
-
-
-        // -- adobe illustrator click through --
-        let imageIndex = 0;
-        let images = [
-            'illustrations/aiplanet1.jpeg',
-            'illustrations/aiplanet2.jpeg'
-        ];
-        function showImage(direction){
-            if(direction == '+'){
-                imageIndex++;
-            }else{
-                imageIndex--;
-            }
-            if(imageIndex < 0){
-                imageIndex = images.length - 1;
-            }
-            if(imageIndex >= images.length){
-                imageIndex = 0;
-            }
-
-            const overlay = document.getElementById("overlay-adobeillustrator");
-            overlay.style.backgroundImage = `url('${images[imageIndex]}')`;
-        }
-        //load image on start
-        showImage('-');
-        showImage('+');
-
-
-
     </script>
+
 
 </body>
 </html>

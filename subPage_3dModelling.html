@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="imageOverlays.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/adobeAi.css">
+    <link rel="stylesheet" href="css/itembar.css">
+    <link rel="stylesheet" href="css/scrollboxstyle.css">
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+</head>
+<body>
+
+    <div class>
+        <a class="goback" onclick="history.back(); return false;">&lt Go back</a>
+    </div>
+
+    <!--Nav Top Generated automatically-->
+    
+    <h2>3D Art Skills</h2>
+
+    <div class="container", id="AI-block">
+        <div class="text" id="barHolder">
+            <p>
+                I have experience in creating 3D Modells in Blender.
+            </p>
+        </div>
+    </div>
+
+    <!--IMAGES ADDED DYNAMIC-->
+    <div id="ImageHolder">
+        <!-- <div class="image-wrapper">
+            <!- - Overlay für bilder - ->
+            <div class="overlay illustrationClass"></div>
+        </div> -->
+    </div>
+
+    
+
+
+
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <!-- CREATE NAV BAR AND NAME-->
+    <script src="JSHelper/main/TopGenerate.js"></script>
+    <script src="JSHelper/main/ImagesGenerate.js"></script>
+    <script src="JSHelper/main/ImagesScrollbarGenerate.js"></script>
+
+    <script src="JSHelper/main/SkillbarGenerate.js"></script>
+    
+
+    <script>
+        
+        /*let dataIn= [
+            ["Tissot Watch", 'modellingImages/clockBack.png'], // Name of item, Link
+            ["", 'modellingImages/clockFront.png'], // Name of item, Link
+        ];
+        let elementIdForImages = "ImageHolder";
+
+        //put tuples with: [title, imagePath]
+        ImagesGenerate.GenerateImagesWithTitle(dataIn, elementIdForImages);*/
+
+        let skills = ["Blender", "3D visualization for lectures and presentations"]
+        let idAddToSkillBar = "barHolder";
+        let newSkillBarId = "skillBar1Id";
+        SkillBarGenerate.GeneateSkillBarFrom(skills, idAddToSkillBar, newSkillBarId);
+
+
+        let elementIdForImages = "ImageHolder";
+        let title = "Tissot Watch";
+        let imagesIn = [
+            'modellingImages/clockFront.png',
+            'modellingImages/clockBack.png', // Name of item, Link
+            'modellingImages/clockClose.png'
+        ];
+        let barId = "bar1";
+        ImagesScrollbarGenerate.GenerateImagesWithTitleHorizontalAlign(title, imagesIn, elementIdForImages, barId)
+        //ImagesGenerate.GenerateImagesWithTitleHorizontalAlign(title, imagesIn, elementIdForImages, barId)
+
+    </script>
+    
+
+
+
+
+</body>

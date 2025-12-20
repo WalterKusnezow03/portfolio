@@ -10,10 +10,20 @@
 .barVertical{
     display: flex;
     flex-direction: column;
-    width: 10%;             /* Make sure navbar takes the full width of the screen */
+    width: 100%;             /* Make sure navbar takes the full width of the screen */
     gap: 10px;               /* Optional: Space between links */
     flex-wrap: wrap;
 }
+
+.barVerticalCentered{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;             /* Make sure navbar takes the full width of the screen */
+    gap: 10px;               /* Optional: Space between links */
+    flex-wrap: wrap;
+}
+
 
 
 .navbar {
@@ -33,4 +43,5 @@
     border-radius: 10px;
     background-color: #dfdfdf;
 }
+
 

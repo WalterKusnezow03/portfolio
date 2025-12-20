@@ -1,0 +1,40 @@
+
+
+
+
+
+.scrollboxVertical{
+    height: 200px;            /* Pflicht: begrenzt sichtbaren Bereich */
+    overflow-y: scroll;       /* macht eine Scrollbar */
+    overflow-x: hidden;
+    border: 1px solid black;  /* optional */
+}
+
+.scrollboxHorizontal {
+    /*height: 200px;*/
+    width: 1000px;
+    overflow-y: hidden;
+    overflow-x: auto; /* besser auto statt scroll */
+    border: 0px solid black;
+
+    display: flex;          /* wichtig! */
+    flex-direction: row;    /* horizontal */
+    gap: 10px;              /* optional: Abstand */
+}
+/*
+.scrollboxHorizontal::-webkit-scrollbar {
+    display: none;                
+}*/
+
+.scrollboxHorizontal::-webkit-scrollbar {
+    height: 8px;               
+}
+
+.scrollboxHorizontal::-webkit-scrollbar-track {
+    background: #222;          
+}
+
+.scrollboxHorizontal::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
