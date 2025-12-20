@@ -307,7 +307,7 @@
         ];
         let stackId2 = 2;
         let morePage2 = "subPage_3dModelling.html";
-        let skills2 = ["3D Modelling"];
+        let skills2 = ["3D Modelling", "Blender"];
 
         ImageStackGenerate.GenerateImageStackWithTitleAndSkills
         (
@@ -381,25 +381,24 @@
         ["C++", "Unreal Engine", "Object oriented programming with C++", "MeshData Algorithms / custom solutions"];
         let skillBarId = "skillA";
 
-        SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);
-
-
-        idToAddToA = "skillAll";
-        skillsA = 
-        [
-        "C++", 
-        "Unreal Engine", 
-        "C#",
-        "Java",
-        "Godot Engine",
-        "Android Studio",
-        "Swift IOS Development"
-        ];
-        skillBarId = "skillB";
-        SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);
-        
+        SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);        
     </script>
 
+
+
+    <script src="JSHelper/main/SkillListGenerate.js"></script>
+    <script>
+        idToAddToA = "skillAll";
+        let skillNested = [
+            ["Programming", ["C++", "C#", "Java"]],
+            ["3D Engines", ["Unreal Engine", "Unity", "Godot"]],
+            ["Creative", ["Adobe Illustrator", "Adobe Premiere Pro", "Blender"]],
+            ["Mobile Dev", ["Android Studio", "Swift IOS"]]
+        ]
+        let skillCollectionid = "skillCollectionidB";
+        
+        SkillListGenerate.GeneateSkillListsFromCentered(skillNested, idToAddToA, skillCollectionid);
+    </script>
     
 
 

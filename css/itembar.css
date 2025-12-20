@@ -10,7 +10,7 @@
 .barVertical{
     display: flex;
     flex-direction: column;
-    width: 100%;             /* Make sure navbar takes the full width of the screen */
+    width: auto;             /* Make sure navbar takes the full width of the screen, 100%*/
     gap: 10px;               /* Optional: Space between links */
     flex-wrap: wrap;
 }
