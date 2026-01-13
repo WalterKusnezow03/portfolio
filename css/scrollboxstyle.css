@@ -11,16 +11,28 @@
 }
 
 .scrollboxHorizontal {
-    /*height: 200px;*/
-    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    overflow-x: auto;
     overflow-y: hidden;
-    overflow-x: auto; /* besser auto statt scroll */
+    white-space: nowrap; /* optional, verhindert Umbruch bei Inline-Children */
+
+    width: 100%;
+}
+
+/*
+.scrollboxHorizontal {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto; 
     border: 0px solid black;
 
-    display: flex;          /* wichtig! */
-    flex-direction: row;    /* horizontal */
-    gap: 10px;              /* optional: Abstand */
-}
+    display: flex;          
+    flex-direction: row;   
+    gap: 10px;              
+}*/
 /*
 .scrollboxHorizontal::-webkit-scrollbar {
     display: none;                

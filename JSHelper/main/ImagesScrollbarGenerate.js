@@ -13,16 +13,16 @@ const ImagesScrollbarGenerate = {
         //class="container"
         let scrollbarId = "scrollH" + barId;
         document.getElementById(idToAddTo).innerHTML += `
-            <div class="container">
-                <div class="barVerticalCentered">
-                    <!-- title -->
-                    <p class="title">${title}</p>
-                    <div class="scrollboxHorizontal" id="${scrollbarId}">
-                    
-                        <!-- Overlay für bilder -->
-                    </div>
+            
+            <div class="barVerticalCentered">
+                <!-- title -->
+                <p class="title">${title}</p>
+                <div class="scrollboxHorizontal" id="${scrollbarId}">
+                
+                    <!-- Overlay für bilder -->
                 </div>
             </div>
+        
         `;
 
         //add images to bar
