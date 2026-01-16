@@ -45,6 +45,16 @@
     opacity: 1.0;
 }
 
+
+/*Robot Overlay*/
+#overlay-6{
+    background: url('thumbnails/robotThumbnail.jpg') center/cover no-repeat;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 110%;
+    opacity: 1.0;
+}
+
+
 /*Adobe illustrator Overlay*/
 #overlay-adobeillustrator{
     background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
@@ -60,7 +70,8 @@
 #overlay-2:hover, 
 #overlay-3:hover,
 #overlay-4:hover,
-#overlay-5:hover
+#overlay-5:hover,
+#overlay-6:hover
 {
     background-size: 120%;
     opacity: 0.7;

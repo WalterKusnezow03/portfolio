@@ -1,6 +1,6 @@
 
 
-
+//click trough stack of images
 const ImageStackGenerate = {
     
 
