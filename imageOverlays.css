@@ -1,3 +1,20 @@
+/*Default overlay class*/
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;*/
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 100%;
+    opacity: 1.0;
+}
+
+
+
 /*BMW OVERLAY*/
 #overlay-0{
     background: url('thumbnails/bmw.jpeg')center/cover no-repeat;
@@ -44,8 +61,6 @@
     background-size: 110%;
     opacity: 1.0;
 }
-
-
 /*Robot Overlay*/
 #overlay-6{
     background: url('thumbnails/robotThumbnail.jpg') center/cover no-repeat;
@@ -77,20 +92,7 @@
     opacity: 0.7;
 }
 
-/*Default overlay class*/
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('thumbnails/skeltonThumbnail.jpg') center/cover no-repeat;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-size 1.0s ease, opacity 0.5s ease;;
-    background-size: 100%;
-    opacity: 1.0;
-}
+
 
 
 
