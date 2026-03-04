@@ -105,6 +105,7 @@
                 <div class="skillbutton">Adobe Illustrator</div>
                 <div class="skillbutton">OOP C++</div>
                 <div class="skillbutton">MeshData Algorithms</div>
+                <div class="skillbutton">Linear & 3D Algebra</div>
             </div>
             
 
@@ -148,13 +149,18 @@
             <p>
                 All of the visible animations are generated on runtime.
             </p>
-
+            <p>
+                The system also includes a simplified rigid-body dynamics model
+                for simulating inactive or deactivated bodies.
+            </p>
 
             
             <div class="barHorizontal">
                 <div class="skillbutton">C++</div>
                 <div class="skillbutton">Unreal Engine</div>
                 <div class="skillbutton">OOP C++</div>
+                <div class="skillbutton">Linear & 3D Algebra</div>
+                <div class="skillbutton">Rigid Body Transformations</div>
             </div>
         </div>
     </div>
@@ -417,7 +423,13 @@
     <script>
         let idToAddToA = "skillVeryGood";
         let skillsA = 
-        ["C++", "Unreal Engine", "Object oriented programming with C++", "MeshData Algorithms / custom solutions"];
+        [
+            "C++", 
+            "Unreal Engine", 
+            "Object oriented programming with C++", 
+            "MeshData Algorithms / custom solutions",
+            "Linear Algebra & 3D Transformations"
+        ];
         let skillBarId = "skillA";
 
         SkillBarGenerate.GeneateSkillBarFromCentered(skillsA, idToAddToA, skillBarId);        
