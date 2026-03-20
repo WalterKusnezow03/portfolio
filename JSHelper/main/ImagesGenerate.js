@@ -1,6 +1,14 @@
 
 
 const ImagesGenerate = {
+    GetViewPortSizeMin: function () {
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;  
+        const minViewport = Math.min(viewportWidth, viewportHeight);
+        return minViewport;
+    },
+
+
     //generate image with title script
     //put tuples with: [title, imagePath]
     GenerateImagesWithTitle: function
@@ -16,18 +24,20 @@ const ImagesGenerate = {
     },
     GenerateImageWithTitle: function
     (imagePath, title, idToAddTo, overlayIndex, type) {
-            let overlayId = "ImageId" + overlayIndex;
-            let typeOverlay = "overlayImage" + type;
+        let overlayId = "ImageId" + overlayIndex;
         
-            document.getElementById(idToAddTo).innerHTML += `
-            
-            <div>
-                <!-- title -->
-                <p class="title">${title}</p>
-                <!-- Overlay für bilder -->
-                <div class="${typeOverlay}" id="${overlayId}"></div>
-            </div>
-            
+        let typeOverlaybase = "overlayImage";
+        let typeOverlay = "overlayImage" + type;
+        
+        document.getElementById(idToAddTo).innerHTML += `
+        
+        <div>
+            <!-- title -->
+            <p class="title">${title}</p>
+            <!-- Overlay für bilder -->
+            <div class="${typeOverlaybase} ${typeOverlay}" id="${overlayId}"></div>
+        </div>
+        
         `;
 
         //<div class="overlayImage" id="${overlayId}"></div>
@@ -36,7 +46,43 @@ const ImagesGenerate = {
         const overlay = document.getElementById(overlayId);
         overlay.style.backgroundImage = `url('${imagePath}')`;
         //overlay.style.backgroundImage = `url('${images[i]}')`;
+
+
+        //set resoltuion
+        if (type == "Auto") {
+            const img = new Image();
+            img.src = imagePath;
+
+            img.onload = () => {
+                const overlayUpdate = document.getElementById(overlayId);
+                console.log("DEBUG_IMAGE overlay:", overlayUpdate);
+                console.log("DEBUG_IMAGE Width:", img.naturalWidth);
+                console.log("DEBUG_IMAGE Height:", img.naturalHeight);
+                let x = img.naturalWidth;
+                let y = img.naturalHeight;
+                let maxCurrent = Math.max(x, y);
+                let maxRes = ImagesGenerate.GetViewPortSizeMin() * 0.8;//800;
+                console.log("DEBUG_IMAGE GetViewPortSizeMax:", maxRes);
+
+                let scalar = maxRes / maxCurrent; //scalar = distTarget / distAll
+                let xUpdate = x * scalar;
+                let yUpdate = y * scalar;
+                
+                overlayUpdate.style.width = xUpdate + "px";
+                overlayUpdate.style.height = yUpdate + "px";
+                overlayUpdate.style.backgroundSize = "100%";
+                
+
+            };
+
+        }
+
+
+        
+
+
     },
+    
 
 
     GenerateImagesWithTitleHorizontalAlign: function
