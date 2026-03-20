@@ -9,24 +9,28 @@ const ImagesGenerate = {
             let title = data[i][0];
             let imagePath = data[i][1];
             let overlayIndex = i;
-            this.GenerateImageWithTitle(imagePath, title, idToAddTo, overlayIndex)
+            let type = data[i][2];
+            this.GenerateImageWithTitle(imagePath, title, idToAddTo, overlayIndex, type)
         }
         console.log("ImagesGeneratePrint");
     },
     GenerateImageWithTitle: function
-    (imagePath, title, idToAddTo, overlayIndex) {
+    (imagePath, title, idToAddTo, overlayIndex, type) {
             let overlayId = "ImageId" + overlayIndex;
-
+            let typeOverlay = "overlayImage" + type;
+        
             document.getElementById(idToAddTo).innerHTML += `
             
             <div>
                 <!-- title -->
                 <p class="title">${title}</p>
                 <!-- Overlay für bilder -->
-                <div class="overlayImage" id="${overlayId}"></div>
+                <div class="${typeOverlay}" id="${overlayId}"></div>
             </div>
             
         `;
+
+        //<div class="overlayImage" id="${overlayId}"></div>
 
         //set image 
         const overlay = document.getElementById(overlayId);

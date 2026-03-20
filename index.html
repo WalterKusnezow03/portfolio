@@ -47,6 +47,55 @@
 
 
 
+    
+
+
+
+    <!-- SKELLETON 2.0-->
+    <div class="container" id="block1">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-1" class="overlay" onclick="playVideo(1)"></div>
+
+
+
+            <!-- YouTube Video -->
+            <iframe id="video1" 
+                src="https://www.youtube.com/embed/2cuWjTEclK8?si=s04j_Cq2eDWOej7_"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="text">
+            <h3>Bipedal locomotion 2.0: using SLIP Model</h3>
+            <p>
+                I am working with Unreal Engine on the 
+                generalization of my motion pattern generator, using the 
+                Spring Loaded Inverted Pendulum Model,
+                towards controlled walking, running, 
+                and interaction with the terrain.
+            </p>
+            <p>
+                All of the visible animations are generated on runtime.
+            </p>
+            <p>
+                I am also working on a rigid-body dynamics model 
+                for simulating inactive or deactivated bodies.
+            </p>
+
+            
+            <div class="barHorizontal">
+                <div class="skillbutton">C++</div>
+                <div class="skillbutton">Unreal Engine</div>
+                <div class="skillbutton">OOP C++</div>
+                <div class="skillbutton">Linear & 3D Algebra</div>
+            </div>
+        </div>
+    </div>
+
     <!-- BMW INTERNSHIP -->
     <div class="container" id="block0">
         <div class="video-wrapper">
@@ -117,51 +166,53 @@
     </div>
 
 
-
-    <!-- SKELLETON 2.0-->
-    <div class="container" id="block1">
+    <!-- TERRAIN -->
+    <div class="container", id="block4">
         <div class="video-wrapper">
             <!-- Overlay zum Verdecken des Videos -->
-            <div id="overlay-1" class="overlay" onclick="playVideo(1)"></div>
+            <div id="overlay-4" class="overlay" onclick="playVideo(4)"></div>
 
-
-
-            <!-- YouTube Video -->
-            <iframe id="video1" 
-                src="https://www.youtube.com/embed/2cuWjTEclK8?si=s04j_Cq2eDWOej7_"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
+            <!-- YouTube Video-->
+            <iframe id="video4" src="https://www.youtube.com/embed/KXvyhSmcU2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             
         </div>
 
         <div class="text">
-            <h3>Bipedal locomotion 2.0: using SLIP Model</h3>
+            <h3>Terrain generation: Bezier splines</h3>
             <p>
-                I am working with Unreal Engine on the 
-                generalization of my motion pattern generator, using the 
-                Spring Loaded Inverted Pendulum Model,
-                towards controlled walking, running, 
-                and interaction with the terrain.
+                Im developing on a Terrain generation solution for the Unreal Engine, 
+                using connected Bezier splines, 
+                including generation of simple trees and their meshes.
+                To keep performance in mind, 
+                I merge similar meshes, like all leafs into a single Buffer per Chunk. 
+                Gpu Instancing, to spawn grass on the terrain, is also supported.
             </p>
             <p>
-                All of the visible animations are generated on runtime.
+                Special Features: Dynamic mesh deformation on all procedural layers,
+                Custom Lod System, saving and loading terrain by writing custom binaries, 
+                and Meshdata conversion to a UStaticMesh assets.
             </p>
             <p>
-                I am also working on a rigid-body dynamics model 
-                for simulating inactive or deactivated bodies.
+                In development: Custom Level Streaming
+            </p>
+            <p>
+                I have 2 years of Experience in 
+                Writing MeshData Buffers in C++ 
+                (Manual filling Vertex, Index and Triangle Buffers, 
+                merging Meshes - to increase performance, removing Parts of meshes / clipping, 
+                Projection and custom UV Mapping)
             </p>
 
-            
             <div class="barHorizontal">
                 <div class="skillbutton">C++</div>
                 <div class="skillbutton">Unreal Engine</div>
                 <div class="skillbutton">OOP C++</div>
-                <div class="skillbutton">Linear & 3D Algebra</div>
+                <div class="skillbutton">MeshData Algorithms</div>
             </div>
         </div>
+
     </div>
+
 
 
 
@@ -232,53 +283,7 @@
         </div>
     </div>
 
-    <!-- TERRAIN -->
-    <div class="container", id="block4">
-        <div class="video-wrapper">
-            <!-- Overlay zum Verdecken des Videos -->
-            <div id="overlay-4" class="overlay" onclick="playVideo(4)"></div>
-
-            <!-- YouTube Video-->
-            <iframe id="video4" src="https://www.youtube.com/embed/KXvyhSmcU2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-             
-        </div>
-
-        <div class="text">
-            <h3>Terrain generation: Bezier splines</h3>
-            <p>
-                Im developing on a Terrain generation solution for the Unreal Engine, 
-                using connected Bezier splines, 
-                including generation of simple trees and their meshes.
-                To keep performance in mind, 
-                I merge similar meshes, like all leafs into a single Buffer per Chunk. 
-                Gpu Instancing, to spawn grass on the terrain, is also supported.
-            </p>
-            <p>
-                Special Features: Dynamic mesh deformation on all procedural layers,
-                Custom Lod System, saving and loading terrain by writing custom binaries, 
-                and Meshdata conversion to a UStaticMesh assets.
-            </p>
-            <p>
-                In development: Custom Level Streaming
-            </p>
-            <p>
-                I have 2 years of Experience in 
-                Writing MeshData Buffers in C++ 
-                (Manual filling Vertex, Index and Triangle Buffers, 
-                merging Meshes - to increase performance, removing Parts of meshes / clipping, 
-                Projection and custom UV Mapping)
-            </p>
-
-            <div class="barHorizontal">
-                <div class="skillbutton">C++</div>
-                <div class="skillbutton">Unreal Engine</div>
-                <div class="skillbutton">OOP C++</div>
-                <div class="skillbutton">MeshData Algorithms</div>
-            </div>
-        </div>
-
-    </div>
-
+    
 
     <!-- ROBOT SIM-->
     <div class="container">
