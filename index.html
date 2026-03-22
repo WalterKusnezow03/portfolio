@@ -37,6 +37,9 @@
         <div>
             <a href="#block4">Terrain generation</a>
         </div>
+        <div>
+            <a href="#block3">Decal Less Texture Projection</a>
+        </div>
     
     </div>
 
@@ -73,7 +76,7 @@
                 Buffers, Projection and Matrixcalculations: 
                 solving Computergraphics related problems in C++.     
             </p>
-            <p>
+            <p> 
                 Working on this agile research / exploration project, 
                 as the only Programmer and Designer,
                 was challenging but a really great opportunity to gain more Experience!
@@ -97,7 +100,6 @@
         
     </div>
     
-
 
 
 
@@ -146,6 +148,8 @@
                 <div class="skillbutton">Unreal Engine</div>
                 <div class="skillbutton">OOP C++</div>
                 <div class="skillbutton">Linear & 3D Algebra</div>
+                <div class="skillbutton">Computergraphics</div>
+                <div class="skillbutton">Computeranimation</div>
             </div>
         </div>
     </div>
@@ -179,7 +183,7 @@
                 and Meshdata conversion to a UStaticMesh assets.
             </p>
             <p>
-                I have 2 years of Experience in 
+                I have 3 years of Experience in 
                 Writing MeshData Buffers in C++ 
                 (Manual filling Vertex, Index and Triangle Buffers, 
                 merging Meshes - to increase performance, removing Parts of meshes / clipping, 
@@ -191,9 +195,111 @@
                 <div class="skillbutton">Unreal Engine</div>
                 <div class="skillbutton">OOP C++</div>
                 <div class="skillbutton">MeshData Algorithms</div>
+                <div class="skillbutton">Computergraphics</div>
             </div>
         </div>
 
+    </div>
+
+
+    <!-- DECAL LESS ANY MESH WIDGET-->
+    <div class="container" id="block3">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-7" class="overlay" onclick="playVideo(7)"></div>
+
+
+            <!-- YouTube Video -->
+            <iframe id="video7" 
+                src="https://www.youtube.com/embed/KTxD4V6lMAw?si=ohQx6a4HIT9jUXRH"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="text">
+            <h3>Decal-Less Surface Widgets</h3>
+
+            <p>
+            I developed a system in Unreal Engine for general-purpose surface extraction
+            and widget / texture projection without using GPU-expensive decals.
+            Meshes that display UMG widgets are precomputed once and stored as binaries,
+            allowing for significantly better runtime performance.
+            </p>
+
+            <p>
+            This custom algorithm enables placing any "sticker" onto any mesh.
+            The projection is defined by a plane / volume that determines the
+            location and viewing angle of the sticker.
+            </p>
+
+            <p>
+            Editing is fully accessible through Unreal Engine's native UMG editor.
+            </p>
+
+            <p>
+            All mesh extraction, planar UV mapping, and clipping algorithms are
+            fully custom-written.
+            </p>
+
+            <p>
+            To implement this system, I modified the Unreal Engine
+            UWidgetComponent and FPrimitiveSceneProxy classes.
+            </p>
+
+            <p>
+            I have over three years of experience writing custom
+            MeshData algorithms in C++.
+            </p>
+
+            <div class="barHorizontal">
+                <div class="skillbutton">C++</div>
+                <div class="skillbutton">Unreal Engine</div>
+                <div class="skillbutton">Extending UE Native Systems</div>
+                <div class="skillbutton">OOP C++</div>
+                <div class="skillbutton">Linear & 3D Algebra</div>
+                <div class="skillbutton">Mesh Data Algorithms & Custom Solutions</div>
+                <div class="skillbutton">Computer Graphics</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- PATH FINDER -->
+    <div class="container" id="block2">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-3" class="overlay" onclick="playVideo(3)"></div>
+
+            <!-- YouTube Video -->
+            <iframe id="video3" src="https://www.youtube.com/embed/Vx3eUHKYpVY?si=Df2ehlMSKx3MKJBP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="text">
+            <h3>Pathfinding: Accelerated A* Algorithm</h3>
+            <p>
+                I developed a pathfinding solution for the Unreal Engine,
+                based on the A* Algorithm for 3D environments, 
+                utilizing a 2D grid map to store nodes. 
+                These nodes are either pre-collected from meshes at the start of the game or 
+                dynamically added asynchronously during gameplay. 
+                This ensures that a route, such as one guiding a bot to the player, is always successfully determined.
+                With tangential checks the number of possible routes is minimized.
+                The Graph can be stored and loaded from storage as binary file.
+            </p>
+
+            <div class="barHorizontal">
+                <div class="skillbutton">C++</div>
+                <div class="skillbutton">Unreal Engine</div>
+                <div class="skillbutton">OOP C++</div>
+            </div>
+        </div>
     </div>
 
 
@@ -230,41 +336,12 @@
                 <div class="skillbutton">C++</div>
                 <div class="skillbutton">Unreal Engine</div>
                 <div class="skillbutton">OOP C++</div>
+                <div class="skillbutton">Computergraphics</div>
+                <div class="skillbutton">Computeranimation</div>
             </div>
         </div>
     </div>
 
-
-    <!-- PATH FINDER -->
-    <div class="container" id="block2">
-        <div class="video-wrapper">
-            <!-- Overlay zum Verdecken des Videos -->
-            <div id="overlay-3" class="overlay" onclick="playVideo(3)"></div>
-
-            <!-- YouTube Video -->
-            <iframe id="video3" src="https://www.youtube.com/embed/Vx3eUHKYpVY?si=Df2ehlMSKx3MKJBP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <div class="text">
-            <h3>Pathfinding: Accelerated A* Algorithm</h3>
-            <p>
-                I developed a pathfinding solution for the Unreal Engine,
-                based on the A* Algorithm for 3D environments, 
-                utilizing a 2D grid map to store nodes. 
-                These nodes are either pre-collected from meshes at the start of the game or 
-                dynamically added asynchronously during gameplay. 
-                This ensures that a route, such as one guiding a bot to the player, is always successfully determined.
-                With tangential checks the number of possible routes is minimized.
-                The Graph can be stored and loaded from storage as binary file.
-            </p>
-
-            <div class="barHorizontal">
-                <div class="skillbutton">C++</div>
-                <div class="skillbutton">Unreal Engine</div>
-                <div class="skillbutton">OOP C++</div>
-            </div>
-        </div>
-    </div>
 
     
 
@@ -412,6 +489,7 @@
         [
             "C++", 
             "Unreal Engine", 
+            "Extending UE Native Systems - Mesh Data Algorithms",
             "Object oriented programming with C++", 
             "MeshData Algorithms / custom solutions",
             "Linear Algebra & 3D Transformations"
