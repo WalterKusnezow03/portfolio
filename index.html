@@ -37,9 +37,6 @@
         <div>
             <a href="#block4">Terrain generation</a>
         </div>
-        <div>
-            <a href="#block3">Decal Less Texture Projection</a>
-        </div>
     
     </div>
 
@@ -201,70 +198,6 @@
 
     </div>
 
-
-    <!-- DECAL LESS ANY MESH WIDGET-->
-    <div class="container" id="block3">
-        <div class="video-wrapper">
-            <!-- Overlay zum Verdecken des Videos -->
-            <div id="overlay-7" class="overlay" onclick="playVideo(7)"></div>
-
-
-            <!-- YouTube Video -->
-            <iframe id="video7" 
-                src="https://www.youtube.com/embed/KTxD4V6lMAw?si=ohQx6a4HIT9jUXRH"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="text">
-            <h3>Decal-Less Surface Widgets</h3>
-
-            <p>
-            I developed a system in Unreal Engine for general-purpose surface extraction
-            and widget / texture projection without using GPU-expensive decals.
-            Meshes that display UMG widgets are precomputed once and stored as binaries,
-            allowing for significantly better runtime performance.
-            </p>
-
-            <p>
-            This custom algorithm enables placing any "sticker" onto any mesh.
-            The projection is defined by a plane / volume that determines the
-            location and viewing angle of the sticker.
-            </p>
-
-            <p>
-            Editing is fully accessible through Unreal Engine's native UMG editor.
-            </p>
-
-            <p>
-            All mesh extraction, planar UV mapping, and clipping algorithms are
-            fully custom-written.
-            </p>
-
-            <p>
-            To implement this system, I modified the Unreal Engine
-            UWidgetComponent and FPrimitiveSceneProxy classes.
-            </p>
-
-            <p>
-            I have over three years of experience writing custom
-            MeshData algorithms in C++.
-            </p>
-
-            <div class="barHorizontal">
-                <div class="skillbutton">C++</div>
-                <div class="skillbutton">Unreal Engine</div>
-                <div class="skillbutton">Extending UE Native Systems</div>
-                <div class="skillbutton">OOP C++</div>
-                <div class="skillbutton">Linear & 3D Algebra</div>
-                <div class="skillbutton">Mesh Data Algorithms & Custom Solutions</div>
-                <div class="skillbutton">Computer Graphics</div>
-            </div>
-        </div>
-    </div>
 
 
 
