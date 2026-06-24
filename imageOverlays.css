@@ -76,6 +76,14 @@
     opacity: 1.0;
 }
 
+/*raytracer overlay*/
+#overlay-8{
+    background: url('thumbnails/raytracing.png') center/cover no-repeat;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 100%;
+    opacity: 1.0;
+}
+
 
 
 /*Adobe illustrator Overlay*/
