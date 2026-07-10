@@ -13,7 +13,7 @@ h1{
 }
 
 /*Text color*/
-p, a{
+p, a, li{
     color: #dfdfdf;
     max-width: 600px;
     margin: 0 auto 20px;
@@ -49,10 +49,19 @@ p, a{
 }
 /** IMAGE WRAPPER */
 
-.image-wrapper {
+.image-wrapper-21 {
     position: relative;
-    width: 400px;
-    height: 225px;
+    width: 600px;
+    height: 300px;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center center; /* scale from center */
+    z-index: 1; /* so it appears above other elements */        
+}
+
+.image-wrapper-31 {
+    position: relative;
+    width: 600px;
+    height: 260px;
     transition: transform 0.5s ease-in-out;
     transform-origin: center center; /* scale from center */
     z-index: 1; /* so it appears above other elements */        
@@ -82,4 +91,11 @@ iframe {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0; /* Optional: Removes the default left padding/indentation */
+  margin: 0;  /* Optional: Removes default margins */
 }

@@ -37,7 +37,7 @@ const ImageStackGenerate = {
         // HTML generieren
         document.getElementById(idToAddTo).innerHTML += `
             <div class="container" id="${stackIdElement}">
-                <div class="image-wrapper">
+                <div class="image-wrapper-31">
                     <div id="${overlayId}" class="overlay"></div>
                     <div class="buttonStyle left" onclick="ImageStackGenerate.InternalShowImage('-', '${overlayId}')">&lt;</div>
                     <div class="buttonStyle right" onclick="ImageStackGenerate.InternalShowImage('+', '${overlayId}')">&gt;</div>
