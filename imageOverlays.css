@@ -49,7 +49,7 @@
 
 /*Terrain Overlay*/
 #overlay-4{
-    background: url('thumbnails/terrainThumbnail.jpg') center/cover no-repeat;
+    background: url('thumbnails/terrainThumbnail2.jpeg') center/cover no-repeat;
     transition: background-size 1.0s ease, opacity 0.5s ease;;
     background-size: 100%;
     opacity: 1.0;
