@@ -179,6 +179,11 @@
                 and Meshdata conversion to a UStaticMesh assets.
             </p>
             <p>
+                Polygon Plugin: The Bezier spline roads are converted into polygons, 
+                enabling building footprints to be automatically generated or 
+                placed within their boundaries.
+            </p>
+            <p>
                 I have 3 years of Experience in 
                 Writing MeshData Buffers in C++ 
                 (Manual filling Vertex, Index and Triangle Buffers, 
@@ -312,6 +317,12 @@
                 This ensures that a route, such as one guiding a bot to the player, is always successfully determined.
                 With tangential checks the number of possible routes is minimized.
                 The Graph can be stored and loaded from storage as binary file.
+            </p>
+            <p>
+                Polygon Plugin: Polygons generated via the plugin can be 
+                saved to the Graph to mark building footprints. 
+                These 2D polygon crops support can be 
+                rendered and used for computer vision (NN/CV) workflows.
             </p>
 
             <div class="barHorizontal">
@@ -536,7 +547,7 @@
             "C++", 
             "Unreal Engine", 
             "Object oriented programming with C++", 
-            "MeshData Algorithms / custom solutions",
+            "MeshData + Polygon Algorithms / custom solutions",
             "Linear Algebra & 3D Transformations"
         ];
         let skillBarId = "skillA";
