@@ -84,6 +84,13 @@
     opacity: 1.0;
 }
 
+/*unet overlay*/
+#overlay-9{
+    background: url('thumbnails/heatThumbnail.png') center/cover no-repeat;
+    transition: background-size 1.0s ease, opacity 0.5s ease;;
+    background-size: 100%;
+    opacity: 1.0;
+}
 
 
 /*Adobe illustrator Overlay*/

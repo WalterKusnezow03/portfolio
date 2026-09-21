@@ -150,6 +150,61 @@
         </div>
     </div>
 
+
+    
+    <div class="container" id="block5">
+        <div class="video-wrapper">
+            <!-- Overlay zum Verdecken des Videos -->
+            <div id="overlay-9" class="overlay" onclick="playVideo(9)"></div>
+            <!-- YouTube Video -->
+            <iframe id="video9" 
+                src="https://www.youtube.com/embed/DmBRrcDWCQ8?si=XyA9C40xnOeEv1-c" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="text">
+            <h3>Player Reappearance Prediction: using UNet</h3>
+            <p>
+                I am working with Unreal Engine and Python on the 
+                generalization of my Player Reappearance Prediction Model, 
+                using custom polygon renderings and 2D raytracing.
+            </p>
+            <p>
+                Once the player disappears behind cover,
+                the NN will estimate a spatial heatmap of
+                the reappearance position. This will allow 
+                to introduce tactical behavior between multiple
+                agents.
+            </p>
+            <p>
+                All samples are collected during gameplay.
+            </p>
+            <p>
+                The Polygon Structures are stored inside the Custom Pathfinder Plugin.
+            </p>
+            <p>
+                The work includes a custom polygon plugin, and 
+                shared memory management between
+                Unreal and Python using POSIX IPC, including automated Python process launching.
+                The integration of Python and the neural network (running, training)
+                is fully custom-built.
+            </p>
+           
+
+            <div class="barHorizontal">
+                <div class="skillbutton">C++</div>
+                <div class="skillbutton">Unreal Engine</div>
+                <div class="skillbutton">OOP C++</div>
+                <div class="skillbutton">Linear & 3D Algebra</div>
+                <div class="skillbutton">Computergraphics</div>
+                <div class="skillbutton">Python, UNet</div>
+            </div>
+        </div>
+    </div>
     
 
 
